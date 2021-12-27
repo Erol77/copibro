@@ -58,10 +58,25 @@ class User {
 
     public static function owner_info() {
         // your code here ...
+        $user_id = $_GET['user_id'];//получаем из гет параметра ид пользователя
+         if ($user_id) {
+            $result = DB::query("SELECT * FROM users WHERE user_id='".$user_id."' LIMIT 1;") or die (DB::error());// запрос на выборку пользователя из бд
+            $get =  json_encode($result->fetch_assoc(),JSON_HEX_QUOT);// получаем данные пользователя в json
+        } else {
+            $get = 'there is no data for the request'
+        }
+        return $get;        
     }
 
     public static function owner_update($data = []) {
         // your code here ...
+        if ( isset($data['last_name']) || isset($data['middle_name']) || isset($data['email']) || isset($data['phone'])){
+            return response('error_code'=>'there are no fields to change');
+        } else {
+            $
+        }
+        `first_name`, `last_name`, `middle_name`, `email`, `phone`
+        DB::query("UPDATE users SET login_attempts='0' WHERE user_id='".$user_id."' LIMIT 1;") or die (DB::error());
     }
 
 }
