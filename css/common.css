@@ -69,5 +69,76 @@ img {width: 100%;}
 /* ------------------------------- HOME ------------------------------- */
 
 /* header */
+/* .header a{
+    text-decoration:none;
+} */
 
-/* ... your code here ... */
+@media (min-width: 376px) {
+    ul, li{
+        display: inline;
+    }
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1000px;
+        margin-top: 30px;
+        /* gap: 5px; */
+    }
+    .nav-store {
+        display: none;
+    }
+    .nav-logo img {
+        width: 203px;
+    }
+    .nav-button a{
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        /* margin: 0 15px 15px 0; */
+        width: 117px;
+        height: 40px;
+        color: #FFFFFF;
+        border-color: #BC9CFF;
+        /* border-style: solid; */
+        /* border-width: 2px; */
+        background: #0962E8;
+        border-radius: 10px;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 140%;
+    }
+    /* .wrap {
+        padding: 0 20px;
+    }
+
+    .title {
+        font-size: 22px;
+    } */
+}
+
+@media (max-width: 375px) {
+    .nav {
+        display: flex;
+        /* grid-template:3; */
+        justify-content: space-between;
+        margin: 37px 14px 14px;
+        gap: 5px;
+    }
+    ul,li{
+        display: inline;
+    }
+    .nav li:first-child {
+        flex-grow: 1;
+    }
+    .nav li:last-child{
+        display: none;
+    }
+    .nav-store  img {
+        width: 40px;
+    }
+    .nav-logo img{
+        width: 153px;
+    }
+}
+
